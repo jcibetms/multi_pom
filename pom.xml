@@ -10,9 +10,9 @@
 		<module>Child_B</module>
 	</modules>
 	<scm>
-		<connection>scm:git:https://github.com/jcibetms/multi-pom.git</connection>
-		<developerConnection>scm:git:https://github.com/jcibetms/multi-pom.git</developerConnection>
-		<url>https://github.com/jcibetms/multi-pom.git</url>
+		<connection>scm:git:https://github.com/jcibetms/multi_pom.git</connection>
+		<developerConnection>scm:git:https://github.com/jcibetms/multi_pom.git</developerConnection>
+		<url>https://github.com/jcibetms/multi_pom.git</url>
 		<tag>HEAD</tag>
 	</scm>
 	<build>
