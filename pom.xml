@@ -1,6 +1,51 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>the.laxmikant</groupId>
-  <artifactId>multi_pom</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>the.laxmikant</groupId>
+	<artifactId>multi_pom</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<modules>
+		<module>Child_A</module>
+		<module>Child_B</module>
+	</modules>
+	<scm>
+		<connection>scm:git:https://github.com/jcibetms/multi-pom.git</connection>
+		<developerConnection>scm:git:https://github.com/jcibetms/multi-pom.git</developerConnection>
+		<url>https://github.com/jcibetms/multi-pom.git</url>
+		<tag>HEAD</tag>
+	</scm>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-scm-plugin</artifactId>
+				<version>1.9.5</version>
+				<configuration>
+					<message>Add version files to git</message>
+					<systemProperties>
+						<systemProperty>
+							<name>message</name>
+							<value>[Add Version to git]</value>
+						</systemProperty>
+					</systemProperties>
+				</configuration>
+				<executions>
+					<execution>
+						<id>add-version-to-git</id>
+						<phase>package</phase>
+						<goals>
+							<goal>add</goal>
+							<goal>checkin</goal>
+						</goals>
+						<configuration>
+							<basedir>./</basedir>
+							<!-- <includes>versions/*</includes> -->
+							<message>[Add Version to git]</message>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
 </project>
