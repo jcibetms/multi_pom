@@ -40,7 +40,6 @@
 						</goals>
 						<configuration>
 							<basedir>./</basedir>
-							<!-- <includes>versions/*</includes> -->
 							<message>[Add Version to git]</message>
 						</configuration>
 					</execution>
